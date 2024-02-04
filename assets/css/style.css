@@ -1,0 +1,275 @@
+:root {
+  --primary-color: #ec1f55;
+  --text-color: #333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  
+}
+
+body {
+  background-image: linear-gradient(to right, #ffc7ba, #8865ff);
+  background-image: url(/assets/img/hoho.jpg);
+  background-size: cover;
+  background-position: left center ; 
+
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.player {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.player .icon-pause {
+  display: none;
+}
+
+.player.playing .icon-pause {
+  display: inline-block;
+}
+
+.player.playing .icon-play {
+  display: none;
+}
+
+.dashboard {
+  padding: 16px 16px 14px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 480px;
+    border-bottom: 1px solid #ebebeb;
+    border-radius: 1.5%;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+header h3 {
+  color: var(--primary-color);
+  font-size: 16px;
+}
+
+header h2 {
+  color: var(--text-color);
+  font-size: 20px;
+}
+
+/* CD */
+.cd {
+  display: flex;
+  margin: auto;
+  width: 200px;
+}
+
+.cd-thumb {
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  background-size: cover;
+  margin: auto;
+}
+
+/* CONTROL */
+
+.volume-control .current-time,
+.volume-control .end-time {
+    font-size: 16px; /* Kích thước chữ */
+    color: #333; /* Màu chữ */
+    margin: 0; /* Loại bỏ margin */
+    padding: 0 10px; /* Thêm padding ở cả hai bên */
+    border: 1px solid transparent; /* Thêm border để giữ cho kích thước không thay đổi */
+    border-radius: 5px; /* Bo tròn các góc */
+    position: absolute; /* Đặt thẻ h5 thành vị trí tuyệt đối trong phần điều khiển */
+}
+
+.volume-control .current-time {
+  left: 0; /* Đặt thời gian hiện tại ở vị trí bên trái */
+}
+
+.volume-control .end-time {
+  right: 0; /* Đặt thời gian kết thúc ở vị trí bên phải */
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  justify-content: space-between; 
+  position: relative;
+}
+
+.volume-control .fa {
+  color: #666;
+  font-size: 20px;
+  padding-left: 100px;
+  
+}
+
+.volume-control input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40%;
+  height: 10px;
+  margin: 0 ;
+  background: #d3d3d3;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  margin-left: -80px;
+  width: 40%; /* Chiều rộng của thanh điều khiển */
+    margin-right: 130px; /* Thêm margin ở cả hai bên */
+}
+
+.volume-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.volume-control input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+
+
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 18px 0 8px 0;
+}
+
+.control .btn {
+  color: #666;
+  padding: 18px;
+  font-size: 18px;
+}
+
+.control .btn.active {
+  color: var(--primary-color);
+}
+
+.control .btn-toggle-play {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+}
+
+
+/* FIX cho đẹp */
+.progress {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 16px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  border-radius: 10px;
+
+}
+
+.progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  border-radius: 50%;
+
+}
+
+/* PLAYLIST */
+.playlist {
+  margin-top: 445px;
+  padding: 12px;
+  border-radius: 1%;
+  background-color: #ffffffd1;
+}
+
+.song {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  background-color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.song.active {
+  background-color: var(--primary-color);
+}
+
+.song:active {
+  opacity: 0.8;
+}
+
+.song.active .option,
+.song.active .author,
+.song.active .title {
+  color: #fff;
+}
+
+.song .thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-size: cover;
+  margin: 0 8px;
+}
+
+.song .body {
+  flex: 1;
+  padding: 0 16px;
+}
+
+.song .title {
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.song .author {
+  font-size: 12px;
+  color: #999;
+}
+
+.song .option {
+  padding: 16px 8px;
+  color: #999;
+  font-size: 18px;
+}
